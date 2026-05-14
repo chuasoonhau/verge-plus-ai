@@ -3,17 +3,8 @@ import {createRoot} from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 
-console.log('Main.tsx is running');
-const rootElement = document.getElementById('root');
-console.log('Root element:', rootElement);
-
-if (rootElement) {
-  createRoot(rootElement).render(
-    <StrictMode>
-      <App />
-    </StrictMode>,
-  );
-  console.log('React render called');
-} else {
-  console.error('Root element not found!');
-}
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+);
