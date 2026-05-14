@@ -1,1 +1,92 @@
-/* Add styles here */
+:root {
+  /* Color Palette - Light Mode (Default) */
+  --bg-color: oklch(98% 0.01 240);
+  --text-color: oklch(25% 0.02 240);
+  --primary-color: oklch(65% 0.25 150);
+  --primary-hover: oklch(60% 0.25 150);
+  --card-bg: oklch(100% 0 0);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --glow-color: oklch(70% 0.2 150 / 0.3);
+  --number-bg: oklch(95% 0.01 240);
+  
+  /* UI Elements */
+  --border-radius: 12px;
+  --transition-speed: 0.3s;
+}
+
+[data-theme="dark"] {
+  --bg-color: oklch(15% 0.02 240);
+  --text-color: oklch(95% 0.01 240);
+  --primary-color: oklch(75% 0.2 150);
+  --primary-hover: oklch(80% 0.2 150);
+  --card-bg: oklch(20% 0.03 240);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --glow-color: oklch(75% 0.2 150 / 0.5);
+  --number-bg: oklch(25% 0.03 240);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-align: center;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle Noise Texture */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: 2.5rem;
+}
+
+.theme-switch-container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 10000;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+theme-toggle {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+
+/* Reusable styles for the Web Component to inherit */
+toto-generator {
+  --comp-primary: var(--primary-color);
+  --comp-primary-hover: var(--primary-hover);
+  --comp-card-bg: var(--card-bg);
+  --comp-text: var(--text-color);
+  --comp-shadow: var(--shadow-color);
+  --comp-glow: var(--glow-color);
+  --comp-number-bg: var(--number-bg);
+}
