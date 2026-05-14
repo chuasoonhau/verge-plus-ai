@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeriTruth | AI-Powered Fake News Detector</title>
+    <meta name="description" content="Identify misinformation and verify news articles using advanced AI.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="logo">
+                <span class="logo-icon">🛡️</span>
+                <h1>VeriTruth</h1>
+            </div>
+            <div class="header-actions">
+                <div class="preview-badge">Simulation Mode</div>
+            </div>
+        </header>
+
+        <main class="content-wrapper">
+            <section id="hero" class="hero">
+                <h2>Unmask the Truth</h2>
+                <p>Paste a news article URL to analyze its authenticity with VeriTruth AI.</p>
+                <div class="search-container">
+                    <input type="url" id="news-url" placeholder="https://news-site.com/article-url" required>
+                    <button id="analyze-btn">Analyze Article</button>
+                </div>
+                <div class="disclaimer">Showcasing AI Content Analysis UX</div>
+            </section>
+
+            <section id="analysis-state" class="analysis-state hidden">
+                <div class="scanner-box">
+                    <div class="scanner-line"></div>
+                    <div class="status-messages">
+                        <p id="status-text">Connecting to VeriTruth Core...</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="results" class="results-container hidden">
+                <div class="result-header">
+                    <div class="truth-gauge-container">
+                        <div class="gauge">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="gauge-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="gauge-fill" id="gauge-fill" cx="50" cy="50" r="45"></circle>
+                            </svg>
+                            <div class="gauge-text">
+                                <span id="truth-percentage">0%</span>
+                                <label>Truth Score</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="verdict-box">
+                        <div id="verdict-badge" class="badge">PENDING</div>
+                        <h3 id="verdict-title">Analysis Complete</h3>
+                    </div>
+                </div>
+
+                <div class="result-details">
+                    <div class="card ai-summary">
+                        <h4>AI Insights</h4>
+                        <p id="ai-insights-text">Detailed analysis will appear here.</p>
+                    </div>
+                    <div class="details-grid">
+                        <div class="card">
+                            <h4>Red Flags</h4>
+                            <ul id="red-flags-list">
+                                <!-- Red flags will be injected here -->
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>Publisher Context</h4>
+                            <p id="publisher-context">Analysis of the news source.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="result-footer">
+                    <button id="reset-btn">Analyze Another URL</button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>&copy; 2026 VeriTruth AI. Combatting misinformation through technology.</p>
+        </footer>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,400;0,700;0,800;0,900;1,900&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-verge-pink: #E5006D;
+  --color-electric-purple: #5200FF;
+  --color-deep-black: #000000;
+  --color-stark-white: #FFFFFF;
+  --color-surface: #f9f9f9;
+  --color-surface-variant: #e2e2e2;
+
+  --font-headline: "Anybody", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --breakpoint-max: 1440px;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-deep-black font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline uppercase tracking-tighter italic;
+  }
+}
+
+@layer utilities {
+  .brutalist-shadow {
+    box-shadow: 4px 4px 0px 0px theme('colors.verge-pink');
+  }
+  .brutalist-shadow-black {
+    box-shadow: 4px 4px 0px 0px theme('colors.deep-black');
+  }
+}

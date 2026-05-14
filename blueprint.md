@@ -1,32 +1,31 @@
-
-# Blueprint: Toto Random Number Generator
+# Blueprint: The Verve
 
 ## Overview
-
-This application is a Toto random number generator built using modern web standards. It features a custom Web Component for generating and displaying unique numbers, and now includes a Day/Night mode for enhanced user experience and accessibility.
+The Verve is a modern, high-intensity editorial news platform built with React, Vite, and TypeScript. It features bold brutalist typography, a sophisticated grid layout, and an integrated AI analysis engine.
 
 ## Project Structure
+*   `src/`: Main source code directory.
+    *   `components/`: Reusable React components (Header, Hero, NewsFeed, Sidebar, DisqusForum, etc.).
+    *   `App.tsx`: Main application component managing global state.
+    *   `main.tsx`: Entry point for React.
+*   `index.html`: Main HTML template.
+*   `package.json`: Project dependencies and scripts.
+*   `vite.config.ts`: Vite configuration.
+*   `tsconfig.json`: TypeScript configuration.
 
-*   `index.html`: Main entry point and layout.
-*   `main.js`: Contains the `<toto-generator>` and `<theme-toggle>` Web Components and theme switching logic.
-*   `style.css`: Defines global styles, theme variables, and layout for fixed elements.
-*   `blueprint.md`: Project documentation and roadmap.
+## Technical Stack
+*   **Framework:** React
+*   **Language:** TypeScript
+*   **Build Tool:** Vite
+*   **Styling:** Tailwind CSS
+*   **Animation:** Motion (formerly Framer Motion)
 
-## Implementation Details
+## Integrated Features: VeriTruth AI
+This application now includes an integrated **VeriTruth AI Analysis** engine.
+*   **Simulation Mode:** The AI logic operates in simulation mode, providing high-fidelity mock analysis results without requiring a Gemini API key.
+*   **Article Verification:** Every news article in the feed can be instantly verified using the "Verify with AI" action.
+*   **Brutalist UI:** The analysis results are presented in a custom-built modal that matches the "The Verge"-inspired brutalist aesthetic of The Verve.
+*   **Advanced UX:** Includes scanning animations, interactive truth score gauges, and detailed AI insights.
 
-### Current State
-*   Framework-less implementation using Web Components.
-*   Responsive UI with Day/Night mode support.
-*   Persistent theme settings using `localStorage` and system preference detection.
-*   Modern styling with `oklch` colors, `Inter` font, and custom animations.
-
-### Troubleshooting Notes
-*   **Toggle Visibility:** Fixed by ensuring high `z-index`, explicit sizing, and moving the script tag to the head with `defer` for reliable component registration.
-*   **Template Literals:** Fixed an issue where JavaScript template literals were incorrectly escaped during deployment.
-
-## Steps Taken
-
-1.  **UI/UX Overhaul:** Implemented a new design with better spacing, typography (Inter), and visual effects (noise texture, shadows).
-2.  **Theming Engine:** Created a robust system using CSS variables and a `[data-theme]` attribute.
-3.  **Component Refactoring:** Updated `<toto-generator>` and created `<theme-toggle>` as encapsulated Web Components.
-4.  **Stability Fixes:** Ensured components register correctly and are visible on top of all other layers.
+## Community Features
+*   **Disqus Forum:** A fully integrated community discussion board at the bottom of the content feed, allowing for user engagement and discussion.
